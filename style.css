@@ -7,7 +7,7 @@ div{
 
 .pongCanvas {
     background-color: #353b48;
-    border: 3px solid black;
+    border: 5px solid green;
     position: absolute;
     left: 50%;
     top: 60%;
@@ -17,10 +17,11 @@ div{
 .net{
     content:"";
     position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom:0; 
-    left: 50%;
+    z-index: 0;
+    top: 195px;
+    width:10px;
+    height:600px;
+    left: 575px;
     border-left: 2px dotted green;
 }
 
