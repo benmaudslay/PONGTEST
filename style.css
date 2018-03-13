@@ -2,11 +2,12 @@
 div{
     font-family: 'Bungee Inline', cursive;
     font-size: 150px;
+    color: limegreen
 }
 
 .pongCanvas {
     background-color: transparent;
-    border: 3px solid black;
+    border: 3px solid limegreen;
     position: absolute;
     left: 50%;
     top: 50%;
