@@ -8,6 +8,13 @@ let playerOnePaddle = {
     width: 10
 }
 
+let playerTwoPaddle = {
+    x: canvas.width - 20,
+    y: 300,
+    height: 70,
+    width: 10
+}
+
 const drawPlayerOnePaddle = () => {
     ctx.beginPath();
     ctx.fillStyle = 'red'
@@ -16,4 +23,13 @@ const drawPlayerOnePaddle = () => {
     ctx.closePath;
 }
 
+const drawPlayerTwoPaddle = () => {
+    ctx.beginPath();
+    ctx.fillStyle = 'red'
+    ctx.rect(playerTwoPaddle.x, playerTwoPaddle.y, playerTwoPaddle.width, playerTwoPaddle.height)
+    ctx.fill();
+    ctx.closePath;
+}
+
 drawPlayerOnePaddle()
+drawPlayerTwoPaddle()
