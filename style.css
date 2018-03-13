@@ -6,11 +6,26 @@ div{
 }
 
 .pongCanvas {
-    background-color: transparent;
-    border: 3px solid limegreen;
+    background-color: #353b48;
+    border: 3px solid black;
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%)
-
+    top: 60%;
+    transform: translate(-50%, -50%);
 }
+
+.net{
+    content:"";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom:0; 
+    left: 50%;
+    border-left: 2px dotted green;
+}
+
+.title{
+    font-family: 'Bungee Inline', cursive;
+    font-size: 150px;
+    text-align: center;
+} 
