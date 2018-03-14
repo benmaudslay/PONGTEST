@@ -1,7 +1,9 @@
 let canvas = document.getElementById('pongCanvas')
 let ctx = canvas.getContext('2d')
 
-let playerOneMoveUP = false;
+
+
+let playerOneMoveUp = false;
 let playerOneMoveDown = false;
 let playerTwoMoveDown = false;
 let playerTwoMoveUp = false;
@@ -27,7 +29,7 @@ const drawPlayerOnePaddle = () => {
     ctx.rect(playerOnePaddle.x, playerOnePaddle.y, playerOnePaddle.width, playerOnePaddle.height);
     ctx.fill();
     ctx.closePath;
-    if (playerOneMoveUP == true) {
+    if (playerOneMoveUp == true) {
         playerOnePaddle.y += 3;
     } else if (playerOneMoveDown == true) {
         playerOnePaddle.y -=3
@@ -40,39 +42,42 @@ const drawPlayerTwoPaddle = () => {
     ctx.rect(playerTwoPaddle.x, playerTwoPaddle.y, playerTwoPaddle.width, playerTwoPaddle.height);
     ctx.fill();
     ctx.closePath;
-};
-
-const playerOneKeyDownHandler = (e) => {
-    if (e.keyCode == 38) {
-        playerOneMoveUP = true;
-    } else if (e.keyCode == 40) {
-        playerOneMoveDown = true;
+    if (playerTwoMoveUp == true) {
+        playerTwoPaddle.y += 3;
+    } else if (playerTwoMoveDown == true) {
+        playerTwoPaddle.y -=3
     }
 };
 
-const playerOneKeyUpHandler = (e) => {
-    if (e.keyCode == 39) {
-        playerOneMoveUP = false;
-    } else if (e.keyCode == 37) {
-        playerOneMoveUP = false;
-    };
-};
-
-const playerTwoKeyDownHandler = (e) => {
-    if (e.keyCode == 87) {
-        playerTwoMoveUP = true;
-    } else if (e.keyCode == 83) {
+const playerKeyDownHandlers = (e) => {
+    if (e.keyCode == 40) {
+        playerOneMoveUp = true;
+    } else if (e.keyCode == 38) {
+        playerOneMoveDown = true;
+    }
+    if (e.keyCode == 83) {
+        playerTwoMoveUp = true;
+    } else if (e.keyCode == 87) {
         playerTwoMoveDown = true;
     }
 };
 
-const playerTwoKeyUpHandler = (e) => {
-    if (e.keyCode == 87) {
-        playerTwoMoveUP = false;
-    } else if (e.keyCode == 83) {
-        playerTwoMoveUP = false;
+const playerKeyUpHandlers = (e) => {
+    if (e.keyCode == 40) {
+        playerOneMoveUp = false;
+    } else if (e.keyCode == 38) {
+        playerOneMoveDown = false;
+    };
+    if (e.keyCode == 83) {
+        playerTwoMoveUp = false;
+    } else if (e.keyCode == 87) {
+        playerTwoMoveDown = false;
     };
 };
+
+
+document.addEventListener("keydown", playerKeyDownHandlers, false);
+document.addEventListener("keyup", playerKeyUpHandlers, false);
 
 drawPlayerOnePaddle();
 drawPlayerTwoPaddle();
