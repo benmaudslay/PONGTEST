@@ -214,11 +214,12 @@ document.getElementById('kingTheme').addEventListener('click', function () {
     }, 2000)
 })
 
-document.getElementById('pondTheme').addEventListener('click', function () {
-$('body').animate({
-    backgroundColor: '#22a6b3'
-}, 2000)
-$('.title').text('POND PONG')
 
-
-})
+document.getElementById('pondTheme').addEventListener('click', function(){
+    $('body').animate({
+        backgroundColor: '#22a6b3'
+    },2000)
+    $('.title').text ('POND PONG')
+    $('.pongCanvas').animate({
+        backgroundColor: '#78e08f'
+    })
