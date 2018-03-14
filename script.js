@@ -2,13 +2,13 @@ let canvas = document.getElementById('pongCanvas')
 let ctx = canvas.getContext('2d')
 
 
-
+//Declare all golbal variables here
 let playerOneMoveUp = false;
 let playerOneMoveDown = false;
 let playerTwoMoveDown = false;
 let playerTwoMoveUp = false;
 
-
+//Player paddle objects
 let playerOnePaddle = {
     x: 10,
     y: 300,
@@ -23,6 +23,8 @@ let playerTwoPaddle = {
     width: 10
 };
 
+
+//Draws the Player 1 Paddle at the appropriate position, also contains the movement limiters to stop it going of the screen
 const drawPlayerOnePaddle = () => {
     ctx.beginPath();
     ctx.fillStyle = 'red';
@@ -35,7 +37,7 @@ const drawPlayerOnePaddle = () => {
         playerOnePaddle.y +=3
     }
 };
-
+//Draws the Player 2 Paddle at the appropriate position, also contains the movement limiters to stop it going of the screen
 const drawPlayerTwoPaddle = () => {
     ctx.beginPath();
     ctx.fillStyle = 'red';
@@ -49,6 +51,8 @@ const drawPlayerTwoPaddle = () => {
     }
 };
 
+
+//Key Handlers to move paddles when key are down and stops movemewnt when key is released
 const playerKeyDownHandlers = (e) => {
     if (e.keyCode == 38) {
         playerOneMoveUp = true;
@@ -75,11 +79,12 @@ const playerKeyUpHandlers = (e) => {
     };
 };
 
-
+// calling our key handlers on our document
 document.addEventListener("keydown", playerKeyDownHandlers, false);
 document.addEventListener("keyup", playerKeyUpHandlers, false);
 
 
+//Basic drawGame function and interval, set for change to integrate menus 
 const drawGame = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawPlayerOnePaddle();
