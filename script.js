@@ -29,10 +29,10 @@ const drawPlayerOnePaddle = () => {
     ctx.rect(playerOnePaddle.x, playerOnePaddle.y, playerOnePaddle.width, playerOnePaddle.height);
     ctx.fill();
     ctx.closePath;
-    if (playerOneMoveUp == true) {
-        playerOnePaddle.y += 3;
-    } else if (playerOneMoveDown == true) {
-        playerOnePaddle.y -=3
+    if (playerOneMoveUp == true && playerOnePaddle.y >= 0) {
+        playerOnePaddle.y -= 3;
+    } else if (playerOneMoveDown == true && playerOnePaddle.y + playerOnePaddle.height <= canvas.height) {
+        playerOnePaddle.y +=3
     }
 };
 
@@ -42,35 +42,35 @@ const drawPlayerTwoPaddle = () => {
     ctx.rect(playerTwoPaddle.x, playerTwoPaddle.y, playerTwoPaddle.width, playerTwoPaddle.height);
     ctx.fill();
     ctx.closePath;
-    if (playerTwoMoveUp == true) {
-        playerTwoPaddle.y += 3;
-    } else if (playerTwoMoveDown == true) {
-        playerTwoPaddle.y -=3
+    if (playerTwoMoveUp == true && playerTwoPaddle.y >= 0) {
+        playerTwoPaddle.y -= 3;
+    } else if (playerTwoMoveDown == true && playerTwoPaddle.y + playerTwoPaddle.height <= canvas.height) {
+        playerTwoPaddle.y +=3
     }
 };
 
 const playerKeyDownHandlers = (e) => {
-    if (e.keyCode == 40) {
+    if (e.keyCode == 38) {
         playerOneMoveUp = true;
-    } else if (e.keyCode == 38) {
+    } else if (e.keyCode == 40) {
         playerOneMoveDown = true;
     }
-    if (e.keyCode == 83) {
+    if (e.keyCode == 87) {
         playerTwoMoveUp = true;
-    } else if (e.keyCode == 87) {
+    } else if (e.keyCode == 83) {
         playerTwoMoveDown = true;
     }
 };
 
 const playerKeyUpHandlers = (e) => {
-    if (e.keyCode == 40) {
+    if (e.keyCode == 38) {
         playerOneMoveUp = false;
-    } else if (e.keyCode == 38) {
+    } else if (e.keyCode == 40) {
         playerOneMoveDown = false;
     };
-    if (e.keyCode == 83) {
+    if (e.keyCode == 87) {
         playerTwoMoveUp = false;
-    } else if (e.keyCode == 87) {
+    } else if (e.keyCode == 83) {
         playerTwoMoveDown = false;
     };
 };
@@ -79,8 +79,6 @@ const playerKeyUpHandlers = (e) => {
 document.addEventListener("keydown", playerKeyDownHandlers, false);
 document.addEventListener("keyup", playerKeyUpHandlers, false);
 
-drawPlayerOnePaddle();
-drawPlayerTwoPaddle();
 
 const drawGame = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
