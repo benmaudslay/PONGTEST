@@ -178,9 +178,8 @@ document.getElementById('pinkTheme').addEventListener('click', function () {
         backgroundColor: '#fd79a8'
     }, 2000)
     $('.title').animate({
-        color: '#e84393'
-    }, 2000)
-    $('.title').text('PINK PONG')
+        opacity: '0'
+    }, 1000)
     $('.pongCanvas').animate({
         backgroundColor: '#f8a5c2',
         borderColor: 'white'
@@ -188,25 +187,33 @@ document.getElementById('pinkTheme').addEventListener('click', function () {
     $('.net').animate({
         borderLeftColor: 'white'
     })
+    setTimeout(function() {
+        $('.title').text('PINK PONG')
+        $('.title').css('color', '#e84393')
+        $('.title').animate({
+            opacity: '1'
+        }, 1000)
+    }, 1000)
 
 })
 
-document.getElementById('kingTheme').addEventListener('click', function(){
+document.getElementById('kingTheme').addEventListener('click', function () {
     $('body').animate({
-        backgroundColor:'#ffb142'
-    },2000)
+        backgroundColor: '#ffb142'
+    }, 2000)
     $('.title').animate({
         color: 'black'
-    },2000)
-    $('.title').text ('KING PONG')
+    }, 2000)
+    $('.title').text('KING PONG')
     $('.pongCanvas').animate({
         backgroundColor: '#2f3542',
         borderColor: '#ffeaa7'
-    },2000)
+    }, 2000)
     $('.net').animate({
         borderLeftColor: 'white'
-    },2000)
+    }, 2000)
 })
+
 
 document.getElementById('pondTheme').addEventListener('click', function(){
     $('body').animate({
@@ -215,7 +222,4 @@ document.getElementById('pondTheme').addEventListener('click', function(){
     $('.title').text ('POND PONG')
     $('.pongCanvas').animate({
         backgroundColor: '#78e08f'
-    })
-
-
     })
