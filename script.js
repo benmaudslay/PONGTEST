@@ -108,4 +108,9 @@ const drawGame = () => {
     drawPongBall();
 }
 
-let game = setInterval(drawGame, 10);
+let game = setInterval(drawGame, 10)
+
+var button = document.createElement("PinkTheme");
+var i = document.createTextNode("ClickOne");
+button.appendChild(i);
+document.body.appendChild(button); 
