@@ -22,7 +22,7 @@ div{
     position: absolute;
     z-index: 0;
     top: 60%;
-    widows: 0px;
+    width: 0px;
     height:600px;
     left: 50%;
     border-left: 2px dotted green;
@@ -30,6 +30,7 @@ div{
 }
 
 .title{
+    margin-top: 30px;
     font-family: 'Bungee Inline', cursive;
     font-size: 150px;
     text-align: center;
@@ -37,6 +38,40 @@ div{
 
 .themeButton{
     position: absolute;
+    padding: 15px 25px;
+    text-align: center;
+    color: black;
     top: -117px;
     left: 441px;
+}
+
+.themeButton > .main {
+    padding: 5px;
+    border: none;
+    background-color: red;
+    border-radius: 2px;
+}
+
+.pinkTheme:hover{
+    background-color:#ff6b81;
+    box-shadow: 0px 5px 0px 0px #CE3323;
+}
+.pinkTheme:active{
+    -webkit-transform: translate(0px, 5px);
+    background-color:pink;
+    box-shadow: 0px 1px 0px 0px;
+    transform: translateY(4px);
+    border-radius: 15px;
+}
+
+.kingTheme:hover{
+    background-color:#F79F1F;
+}
+
+.kingTheme:active{
+    -webkit-transform: translate(0px, 5px);
+    background-color: #FFC312;
+    box-shadow: 0px 1px 0px 0px;
+    transform: translateY(4px);
+    border-radius: 15px;
 }

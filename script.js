@@ -213,9 +213,9 @@ document.getElementById('pondTheme').addEventListener('click', function(){
         backgroundColor: '#22a6b3'
     },2000)
     $('.title').text ('POND PONG')
-   // $('.po')
+    $('.pongCanvas').animate({
+        backgroundColor: '#78e08f'
+    })
 
 
     })
-
-})
