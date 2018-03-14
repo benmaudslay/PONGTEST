@@ -28,7 +28,7 @@ let pongBall = {
     x: 400,
     y: 300,
     radius: 5,
-    moveX: 2.5,
+    moveX: 1,
     moveY: 0
 }
 
@@ -104,6 +104,24 @@ const movePongBall = () => {
     pongBall.y += pongBall.moveY;
 }
 
+const pongBallTopBottomCollision = () => {
+    if (pongBall.y + pongBall.radius <= 0 || pongBall.y + pongBall.radius >= canvas.height) {
+        pongBall.moveY = -pongBall.moveY
+    }
+}
+
+const pongBallPlayerOnePaddleCollision = () => {
+    if (pongBall.y + pongBall.radius >= playerOnePaddle.y && pongBall.y + pongBall.radius <= playerOnePaddle.y + playerOnePaddle.height && pongBall.x + pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x + pongBall.radius >= playerOnePaddle.x) {
+        pongBall.moveX = -pongBall.moveX
+    }
+}
+
+const pongBallPlayerTwoPaddleCollision = () => {
+    if (pongBall.y + pongBall.radius >= playerTwoPaddle.y && pongBall.y + pongBall.radius <= playerTwoPaddle.y + playerTwoPaddle.height && pongBall.x + pongBall.radius <= playerTwoPaddle.x + playerTwoPaddle.width && pongBall.x + pongBall.radius >= playerTwoPaddle.x) {
+        pongBall.moveX = -pongBall.moveX
+        console.log(true)
+    }
+}
 
 //Key Handlers to move paddles when key are down and stops movemewnt when key is released
 const playerKeyDownHandlers = (e) => {
@@ -140,6 +158,9 @@ document.addEventListener("keyup", playerKeyUpHandlers, false);
 //Basic drawGame function and interval, set for change to integrate menus 
 const drawGame = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    pongBallTopBottomCollision();
+    pongBallPlayerOnePaddleCollision();
+    pongBallPlayerTwoPaddleCollision();
     drawPlayerOnePaddle();
     drawPlayerTwoPaddle();
     drawPongBall();
@@ -151,8 +172,8 @@ const drawGame = () => {
 moveStartDirection()
 let game = setInterval(drawGame, 10)
 
-document.getElementById('pinkTheme').addEventListener('click', function() {
-    
+document.getElementById('pinkTheme').addEventListener('click', function () {
+
     $('body').animate({
         backgroundColor: '#fd79a8'
     }, 2000)
@@ -161,7 +182,7 @@ document.getElementById('pinkTheme').addEventListener('click', function() {
     }, 2000)
     $('.title').text('PINK PONG')
     $('.pongCanvas').animate({
-        backgroundColor:'#f8a5c2',
+        backgroundColor: '#f8a5c2',
         borderColor: 'white'
     }, 2000)
     $('.net').animate({
