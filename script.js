@@ -188,4 +188,34 @@ document.getElementById('pinkTheme').addEventListener('click', function () {
     $('.net').animate({
         borderLeftColor: 'white'
     })
+
+})
+
+document.getElementById('kingTheme').addEventListener('click', function(){
+    $('body').animate({
+        backgroundColor:'#ffb142'
+    },2000)
+    $('.title').animate({
+        color: 'black'
+    },2000)
+    $('.title').text ('KING PONG')
+    $('.pongCanvas').animate({
+        backgroundColor: '#2f3542',
+        borderColor: '#ffeaa7'
+    },2000)
+    $('.net').animate({
+        borderLeftColor: 'white'
+    },2000)
+})
+
+document.getElementById('pondTheme').addEventListener('click', function(){
+    $('body').animate({
+        backgroundColor: '#22a6b3'
+    },2000)
+    $('.title').text ('POND PONG')
+   // $('.po')
+
+
+    })
+
 })
