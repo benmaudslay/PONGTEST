@@ -119,5 +119,11 @@ document.getElementById('pinkTheme').addEventListener('click', function() {
         color: '#e84393'
     }, 2000)
     $('.title').text('PINK PONG')
-    
+    $('.pongCanvas').animate({
+        backgroundColor:'#f8a5c2',
+        borderColor: 'white'
+    }, 2000)
+    $('.net').animate({
+        borderLeftColor: 'white'
+    })
 })
