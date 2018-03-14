@@ -42,9 +42,9 @@ const drawPlayerTwoPaddle = () => {
     ctx.rect(playerTwoPaddle.x, playerTwoPaddle.y, playerTwoPaddle.width, playerTwoPaddle.height);
     ctx.fill();
     ctx.closePath;
-    if (playerTwoMoveUp == true) {
+    if (playerTwoMoveUp == true && playerTwoPaddle.y >= 0) {
         playerTwoPaddle.y -= 3;
-    } else if (playerTwoMoveDown == true) {
+    } else if (playerTwoMoveDown == true && playerTwoPaddle.y + playerTwoPaddle.height <= canvas.height) {
         playerTwoPaddle.y +=3
     }
 };
@@ -79,8 +79,6 @@ const playerKeyUpHandlers = (e) => {
 document.addEventListener("keydown", playerKeyDownHandlers, false);
 document.addEventListener("keyup", playerKeyUpHandlers, false);
 
-drawPlayerOnePaddle();
-drawPlayerTwoPaddle();
 
 const drawGame = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
