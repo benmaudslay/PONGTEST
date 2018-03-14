@@ -173,7 +173,8 @@ moveStartDirection()
 let game = setInterval(drawGame, 10)
 
 document.getElementById('pinkTheme').addEventListener('click', function () {
-
+    $('.main').removeClass('activeTheme')
+    $('#pinkTheme').addClass('activeTheme')
     $('body').animate({
         backgroundColor: '#fd79a8'
     }, 2000)
@@ -198,6 +199,8 @@ document.getElementById('pinkTheme').addEventListener('click', function () {
 })
 
 document.getElementById('kingTheme').addEventListener('click', function () {
+    $('.main').removeClass('activeTheme')
+    $('#kingTheme').addClass('activeTheme')
     $('body').animate({
         backgroundColor: '#ffb142'
     }, 2000)
@@ -216,6 +219,8 @@ document.getElementById('kingTheme').addEventListener('click', function () {
 
 
 document.getElementById('pondTheme').addEventListener('click', function(){
+    $('.main').removeClass('activeTheme')
+    $('#pondTheme').addClass('activeTheme')
     $('body').animate({
         backgroundColor: '#22a6b3'
     },2000)
@@ -223,3 +228,4 @@ document.getElementById('pondTheme').addEventListener('click', function(){
     $('.pongCanvas').animate({
         backgroundColor: '#78e08f'
     })
+})
