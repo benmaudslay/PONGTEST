@@ -45,16 +45,17 @@ div{
     left: 441px;
 }
 
+
 .themeButton > .main {
     padding: 5px;
     border: none;
-    background-color: red;
-    border-radius: 2px;
+    border-radius: 10px;
+    font-family: 'Bungee Inline', cursive;
 }
 
 .pinkTheme:hover{
-    background-color:#ff6b81;
-    box-shadow: 0px 5px 0px 0px #CE3323;
+    box-shadow: 2px 5px 7px #ff6b81;
+    color: #ff6b81;
 }
 .pinkTheme:active{
     -webkit-transform: translate(0px, 5px);
@@ -65,13 +66,28 @@ div{
 }
 
 .kingTheme:hover{
-    background-color:#F79F1F;
+    box-shadow: 2px 5px 7px #F79F1F;
+    color: #F79F1F;
 }
-
 .kingTheme:active{
     -webkit-transform: translate(0px, 5px);
     background-color: #FFC312;
     box-shadow: 0px 1px 0px 0px;
     transform: translateY(4px);
     border-radius: 15px;
+}
+.pondTheme:hover{
+    box-shadow: 2px 5px 7px #12CBC4;
+    color:#12CBC4;
+}
+.pondTheme:active{
+    -webkit-transform:translate(0px, 5px);
+    background-color:#12CBC4;
+    box-shadow: 0px 1px 0px 0px;
+    transform: translateY(4px);
+    border-radius: 15px;
+}
+
+.activeTheme{
+background-color: green;
 }
