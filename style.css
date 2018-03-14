@@ -22,11 +22,13 @@ div{
     position: absolute;
     z-index: 0;
     top: 60%;
-    widows: 0px;
+    width: 0px;
     height:600px;
     left: 50%;
-    border-left: 2px dotted green;
-    transform: translateY(-50%)
+    
+    border-left: 1px dotted green;
+    transform: translate(-51%, -50%);
+    opacity: 0.2;
 }
 
 .title{
