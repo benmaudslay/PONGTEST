@@ -27,6 +27,11 @@ const drawPlayerOnePaddle = () => {
     ctx.rect(playerOnePaddle.x, playerOnePaddle.y, playerOnePaddle.width, playerOnePaddle.height);
     ctx.fill();
     ctx.closePath;
+    if (playerOneMoveUP == true) {
+        playerOnePaddle.y += 3;
+    } else if (playerOneMoveDown == true) {
+        playerOnePaddle.y -=3
+    }
 };
 
 const drawPlayerTwoPaddle = () => {
@@ -37,15 +42,15 @@ const drawPlayerTwoPaddle = () => {
     ctx.closePath;
 };
 
-function playerOneKeyDownHandler(e) {
+const playerOneKeyDownHandler = (e) => {
     if (e.keyCode == 38) {
         playerOneMoveUP = true;
     } else if (e.keyCode == 40) {
         playerOneMoveDown = true;
     }
 };
-//Function to make our ship move left or right when the corresponding key is pressed
-function playerOneKeyUpHandler(e) {
+
+const playerOneKeyUpHandler = (e) => {
     if (e.keyCode == 39) {
         playerOneMoveUP = false;
     } else if (e.keyCode == 37) {
@@ -53,5 +58,29 @@ function playerOneKeyUpHandler(e) {
     };
 };
 
+const playerTwoKeyDownHandler = (e) => {
+    if (e.keyCode == 87) {
+        playerTwoMoveUP = true;
+    } else if (e.keyCode == 83) {
+        playerTwoMoveDown = true;
+    }
+};
+
+const playerTwoKeyUpHandler = (e) => {
+    if (e.keyCode == 87) {
+        playerTwoMoveUP = false;
+    } else if (e.keyCode == 83) {
+        playerTwoMoveUP = false;
+    };
+};
+
 drawPlayerOnePaddle();
 drawPlayerTwoPaddle();
+
+const drawGame = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawPlayerOnePaddle();
+    drawPlayerTwoPaddle();
+}
+
+let game = setInterval(drawGame, 10)
