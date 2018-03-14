@@ -1,0 +1,33 @@
+
+div{
+    font-family: 'Bungee Inline', cursive;
+    font-size: 150px;
+    color: limegreen
+}
+
+.pongCanvas {
+    background-color: #353b48;
+    border: 5px solid green;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+}
+
+.net{
+    content:"";
+    position: absolute;
+    z-index: 0;
+    top: 60%;
+    widows: 0px;
+    height:600px;
+    left: 50%;
+    border-left: 2px dotted green;
+    transform: translateY(-50%)
+}
+
+.title{
+    font-family: 'Bungee Inline', cursive;
+    font-size: 150px;
+    text-align: center;
+} 
