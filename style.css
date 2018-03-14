@@ -1,11 +1,11 @@
 body{
-    background-color: #fd79a8;
+    background-color: white;
 }
 
 div{
     font-family: 'Bungee Inline', cursive;
     font-size: 150px;
-    color: #e84393;
+    color: black;
 }
 
 .pongCanvas {
