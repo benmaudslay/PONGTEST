@@ -188,6 +188,7 @@ background-color: green;
 }
 
 
+
 .flamingo {
     position: absolute;
     opacity: 0;
@@ -201,3 +202,4 @@ background-color: green;
     top: 0%;
     z-index: -1;
 }
+

@@ -303,3 +303,98 @@ document.getElementById('pondTheme').addEventListener('click', function(){
         }, 1000)
     }, 1000)
 })
+
+document.getElementById('bongTheme').addEventListener('click', function(){
+    $('.main').removeClass('activeTheme')
+    $('#bongTheme').addClass('activeTheme')
+    $('body').animate({
+        backgroundColor: '#009432'
+    },2000)
+    $('.bongCanvas').animate({
+        backgroundColor: '#667F27'
+    },2000)
+    $('.title').animate({
+        opacity: '0'
+    },1000)
+    setTimeout(function(){
+        $('.title').text('BONG PONG')
+        $('.title').css('color','black')
+        $('.title').animate({
+            opacity: '1'
+        },1000)
+    },1000)
+})
+
+document.getElementById('gongTheme').addEventListener('click', function () {
+    $('.main').removeClass('activeTheme')
+    $('#gongTheme').addClass('activeTheme')
+    $('body').animate({
+        backgroundColor: '#b33939'
+    }, 2000)
+    $('.title').animate({
+        opacity: '0'
+    }, 1000)
+    $('.pongCanvas').animate({
+        backgroundColor: '#218c74',
+    }, 2000)
+    $('.net').animate({
+        borderLeftColor: 'white'
+    })
+    setTimeout(function() {
+        $('.title').text('GONG PONG')
+        $('.title').css('color', '#ffb142')
+        $('.title').animate({
+            opacity: '1'
+        }, 1000)
+    }, 1000)
+})
+
+document.getElementById('thongTheme').addEventListener('click', function () {
+    $('.main').removeClass('activeTheme')
+    $('#thongTheme').addClass('activeTheme')
+    $('body').animate({
+        backgroundColor: 'black'
+    }, 2000)
+    $('.title').animate({
+        opacity: '0'
+    }, 1000)
+    $('.pongCanvas').animate({
+        backgroundColor: 'white',
+        borderColor: '#e66767'
+    }, 2000)
+    $('.net').animate({
+        borderLeftColor: '#ff3838'
+    })
+    setTimeout(function() {
+        $('.title').text('THONG PONG')
+        $('.title').css('color', '#ff3838')
+        $('.title').animate({
+            opacity: '1'
+        }, 1000)
+    }, 1000)
+})
+
+document.getElementById('songTheme').addEventListener('click', function () {
+    $('.main').removeClass('activeTheme')
+    $('#songTheme').addClass('activeTheme')
+    $('body').animate({
+        backgroundColor: '#f7d794'
+    }, 2000)
+    $('.title').animate({
+        opacity: '0'
+    }, 1000)
+    $('.pongCanvas').animate({
+        backgroundColor: 'white',
+        borderColor: '#ffd32a'
+    }, 2000)
+    $('.net').animate({
+        borderLeftColor: '#ff3838'
+    })
+    setTimeout(function() {
+        $('.title').text('SONG PONG')
+        $('.title').css('color', '#ff3838')
+        $('.title').animate({
+            opacity: '1'
+        }, 1000)
+    }, 1000)
+})
