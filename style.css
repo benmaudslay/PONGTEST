@@ -32,7 +32,7 @@ div{
 }
 
 .title{
-    margin-top: 30px;
+    margin-top: 22px;
     font-family: 'Bungee Inline', cursive;
     font-size: 150px;
     text-align: center;
@@ -43,9 +43,9 @@ div{
     padding: 15px 25px;
     text-align: center;
     color: black;
-    top: -117px;
+    top: -16%;
     left: 50%;
-    width: 100%;
+    width: 90%;
     transform: translateX(-50%)
 }
 
@@ -166,4 +166,23 @@ div{
 
 .activeTheme{
 background-color: green;
+}
+
+.playerOneScore {
+    position: absolute;
+    top: 30%;
+    left: 12%;
+}
+
+.playerTwoScore {
+    position: absolute;
+    top: 30%;
+    left: 82%;
+
+}
+
+.score {
+    font-family: 'Bungee Inline', cursive;
+    font-size: 120px;
+
 }
