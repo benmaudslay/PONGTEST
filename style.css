@@ -186,3 +186,18 @@ background-color: green;
     font-size: 120px;
 
 }
+
+
+.flamingo {
+    position: absolute;
+    opacity: 0;
+}
+.flamingoContainer {
+    height: 100%;
+    width: 800px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    overflow: hidden;
+    position: absolute;
+    top: 0%;
+    z-index: -1;
+}
