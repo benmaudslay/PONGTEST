@@ -31,19 +31,18 @@ let pongBall = {
     x: 400,
     y: 300,
     radius: 5,
-    moveX: 2.75,
+    moveX: 0,
     moveY: 0,
     speed: 2.75
+}
+
+const calculateSpeed = (moveY) => {
+    pongBall.moveX = Math.sqrt(Math.pow(pongBall.speed, 2) - Math.pow(moveY, 2))
 }
 
 const moveStartDirection = () => {
     pongBall.x = 400;
     pongBall.y = 300;
-    var startDirectionX = Math.floor(Math.random() * 2) + 1;
-    console.log(startDirectionX);
-    if (startDirectionX == 1) {
-        pongBall.moveX = -pongBall.moveX;
-    }
     var startDirectionY = Math.floor(Math.random() * 2) + 1;
     var startAdjustmentY = Math.floor(Math.random() * 5) + 1;
     //Determines the start angle for Y 
@@ -69,6 +68,12 @@ const moveStartDirection = () => {
     //Determine +/-
     if (startDirectionY == 1) {
         pongBall.moveY = -pongBall.moveY;
+    }
+    calculateSpeed(pongBall.moveY)
+    var startDirectionX = Math.floor(Math.random() * 2) + 1;
+    console.log(startDirectionX);
+    if (startDirectionX == 1) {
+        pongBall.moveX = -pongBall.moveX;
     }
 }
 
@@ -211,7 +216,7 @@ const drawGame = () => {
 
 //CALLING ACTIONS WHEN PAGE IS LOADED
 
-// moveStartDirection();
+moveStartDirection();
 let game = setInterval(drawGame, 10);
 
 document.getElementById('pinkTheme').addEventListener('click', function () {
@@ -247,9 +252,8 @@ document.getElementById('kingTheme').addEventListener('click', function () {
         backgroundColor: '#ffb142'
     }, 2000)
     $('.title').animate({
-        color: 'black'
-    }, 2000)
-    $('.title').text('KING PONG')
+        opacity: '0'
+    }, 1000)
     $('.pongCanvas').animate({
         backgroundColor: '#2f3542',
         borderColor: '#ffeaa7'
@@ -257,6 +261,13 @@ document.getElementById('kingTheme').addEventListener('click', function () {
     $('.net').animate({
         borderLeftColor: 'white'
     }, 2000)
+    setTimeout(function() {
+        $('.title').text('KING PONG')
+        $('.title').css('color', 'black')
+        $('.title').animate({
+            opacity: '1'
+        }, 1000)
+    }, 1000)
 })
 
 
@@ -266,8 +277,17 @@ document.getElementById('pondTheme').addEventListener('click', function(){
     $('body').animate({
         backgroundColor: '#22a6b3'
     },2000)
-    $('.title').text ('POND PONG')
     $('.pongCanvas').animate({
         backgroundColor: '#78e08f'
-    })
+    }, 2000)
+    $('.title').animate({
+        opacity: '0'
+    }, 1000)
+    setTimeout(function() {
+        $('.title').text('POND PONG')
+        $('.title').css('color', 'black')
+        $('.title').animate({
+            opacity: '1'
+        }, 1000)
+    }, 1000)
 })
