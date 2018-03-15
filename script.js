@@ -32,8 +32,9 @@ let pongBall = {
     x: 400,
     y: 300,
     radius: 5,
-    moveX: 1,
-    moveY: 0
+    moveX: 2.75,
+    moveY: 0,
+    speed: 2.75
 }
 
 const moveStartDirection = () => {
@@ -201,7 +202,7 @@ const drawGame = () => {
 
 //CALLING ACTIONS WHEN PAGE IS LOADED
 
-moveStartDirection();
+// moveStartDirection();
 let game = setInterval(drawGame, 10);
 
 document.getElementById('pinkTheme').addEventListener('click', function () {
