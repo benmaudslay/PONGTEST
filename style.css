@@ -167,3 +167,22 @@ div{
 .activeTheme{
 background-color: green;
 }
+
+.playerOneScore {
+    position: absolute;
+    top: 30%;
+    left: 7%;
+}
+
+.playerTwoScore {
+    position: absolute;
+    top: 30%;
+    left: 82%;
+
+}
+
+.score {
+    font-family: 'Bungee Inline', cursive;
+    font-size: 120px;
+
+}

@@ -1,7 +1,6 @@
 let canvas = document.getElementById('pongCanvas')
 let ctx = canvas.getContext('2d')
 
-
 //Declare all golbal variables here
 let playerOneMoveUp = false;
 let playerOneMoveDown = false;
@@ -128,11 +127,21 @@ const pongBallBorderCollisions = () => {
     //LEFT
     if (pongBall.x + pongBall.radius <= 0) {
         playerTwoScore++;
+        pongBall.x = 400;
+        pongBall.y = 300;
+        pongBall.moveX = 0;
+        pongBall.moveY = 0;
+        $('#playerTwoHTMLscore').text(playerTwoScore);
         setTimeout(moveStartDirection, 1000);
     }
     //RIGHT
     else if (pongBall.x + pongBall.radius >= canvas.width) {
         playerOneScore++;
+        pongBall.x = 400;
+        pongBall.y = 300;
+        pongBall.moveX = 0;
+        pongBall.moveY = 0;
+        $('#playerOneHTMLscore').text(playerOneScore);
         setTimeout(moveStartDirection, 1000);
     }
 }
