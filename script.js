@@ -310,8 +310,10 @@ document.getElementById('bongTheme').addEventListener('click', function(){
     $('body').animate({
         backgroundColor: '#009432'
     },2000)
-    $('.bongCanvas').animate({
-        backgroundColor: '#667F27'
+    $('.pongCanvas').animate({
+        backgroundColor: '#78e08f',
+        borderColor: 'black'
+
     },2000)
     $('.title').animate({
         opacity: '0'
@@ -359,8 +361,8 @@ document.getElementById('thongTheme').addEventListener('click', function () {
         opacity: '0'
     }, 1000)
     $('.pongCanvas').animate({
-        backgroundColor: 'white',
-        borderColor: '#e66767'
+        backgroundColor: '#ff3838',
+        borderColor: 'white'
     }, 2000)
     $('.net').animate({
         borderLeftColor: '#ff3838'
@@ -393,6 +395,56 @@ document.getElementById('songTheme').addEventListener('click', function () {
     setTimeout(function() {
         $('.title').text('SONG PONG')
         $('.title').css('color', '#ff3838')
+        $('.title').animate({
+            opacity: '1'
+        }, 1000)
+    }, 1000)
+})
+
+document.getElementById('sarongTheme').addEventListener('click', function () {
+    $('.main').removeClass('activeTheme')
+    $('#sarongTheme').addClass('activeTheme')
+    $('body').animate({
+        backgroundColor: '#e58e26'
+    }, 2000)
+    $('.title').animate({
+        opacity: '0'
+    }, 1000)
+    $('.pongCanvas').animate({
+        backgroundColor: '#f6b93b',
+        borderColor: '#f3a683'
+    }, 2000)
+    $('.net').animate({
+        borderLeftColor: '#ff3838'
+    })
+    setTimeout(function() {
+        $('.title').text('SARONG PONG')
+        $('.title').css('color', '#fad390')
+        $('.title').animate({
+            opacity: '1'
+        }, 1000)
+    }, 1000)
+})
+
+document.getElementById('wrongTheme').addEventListener('click', function () {
+    $('.main').removeClass('activeTheme')
+    $('#wrongTheme').addClass('activeTheme')
+    $('body').animate({
+        backgroundColor: '#4b4b4b'
+    }, 2000)
+    $('.title').animate({
+        opacity: '0'
+    }, 1000)
+    $('.pongCanvas').animate({
+        backgroundColor: '#4bcffa',
+        borderColor: 'black'
+    }, 2000)
+    $('.net').animate({
+        borderLeftColor: '#ff3838'
+    })
+    setTimeout(function() {
+        $('.title').text('WRONG PONG')
+        $('.title').css('color', '#7efff5')
         $('.title').animate({
             opacity: '1'
         }, 1000)
