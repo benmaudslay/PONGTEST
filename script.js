@@ -1,12 +1,15 @@
 let canvas = document.getElementById('pongCanvas')
 let ctx = canvas.getContext('2d')
 
-
 //Declare all golbal variables here
 let playerOneMoveUp = false;
 let playerOneMoveDown = false;
 let playerTwoMoveDown = false;
 let playerTwoMoveUp = false;
+let playerOneScore = 0;
+let playerTwoScore = 0;
+let playerOneReady = false;
+let playerTwoReady = false;
 
 //Player paddle objects
 let playerOnePaddle = {
@@ -28,39 +31,49 @@ let pongBall = {
     x: 400,
     y: 300,
     radius: 5,
-    moveX: 1,
-    moveY: 0
+    moveX: 0,
+    moveY: 0,
+    speed: 2.75
+}
+
+const calculateSpeed = (moveY) => {
+    pongBall.moveX = Math.sqrt(Math.pow(pongBall.speed, 2) - Math.pow(moveY, 2))
 }
 
 const moveStartDirection = () => {
-    var startDirectionX = Math.floor(Math.random() * 2) + 1;
-    console.log(startDirectionX);
-    if (startDirectionX == 1) {
-        pongBall.moveX = -pongBall.moveX;
-    }
+    pongBall.x = 400;
+    pongBall.y = 300;
     var startDirectionY = Math.floor(Math.random() * 2) + 1;
-    var startAdjustmentY = Math.floor(Math.random() * 8) + 1;
+    var startAdjustmentY = Math.floor(Math.random() * 5) + 1;
     //Determines the start angle for Y 
     if (startAdjustmentY == 1) {
-        pongBall.moveY = 0.5;
+        pongBall.moveY = 0.3;
     } else if (startAdjustmentY == 2) {
-        pongBall.moveY = 0.8;
+        pongBall.moveY = 0.6;
     } else if (startAdjustmentY == 3) {
-        pongBall.moveY = 1.1;
+        pongBall.moveY = 0.9;
     } else if (startAdjustmentY == 4) {
-        pongBall.moveY = 1.4;
+        pongBall.moveY = 1.2;
     } else if (startAdjustmentY == 5) {
-        pongBall.moveY = 1.7;
-    } else if (startAdjustmentY == 6) {
-        pongBall.moveY = 2;
+        pongBall.moveY = 1.5;
+    }
+    //CURRENTLY UNUSED
+    else if (startAdjustmentY == 6) {
+        pongBall.moveY = 1.8;
     } else if (startAdjustmentY == 7) {
-        pongBall.moveY = 2.3;
+        pongBall.moveY = 2.1;
     } else if (startAdjustmentY == 8) {
-        pongBall.moveY = 2.6;
+        pongBall.moveY = 2.4;
     }
     //Determine +/-
     if (startDirectionY == 1) {
         pongBall.moveY = -pongBall.moveY;
+    }
+    calculateSpeed(pongBall.moveY)
+    var startDirectionX = Math.floor(Math.random() * 2) + 1;
+    console.log(startDirectionX);
+    if (startDirectionX == 1) {
+        pongBall.moveX = -pongBall.moveX;
     }
 }
 
@@ -100,13 +113,36 @@ const drawPongBall = () => {
 }
 
 const movePongBall = () => {
-    pongBall.x += pongBall.moveX;
-    pongBall.y += pongBall.moveY;
+    if (playerOneReady && playerTwoReady) {
+        pongBall.x += pongBall.moveX;
+        pongBall.y += pongBall.moveY;
+    }
+
 }
 
-const pongBallTopBottomCollision = () => {
+const pongBallBorderCollisions = () => {
     if (pongBall.y + pongBall.radius <= 0 || pongBall.y + pongBall.radius >= canvas.height) {
         pongBall.moveY = -pongBall.moveY
+    }
+    //LEFT
+    if (pongBall.x + pongBall.radius <= 0) {
+        playerTwoScore++;
+        pongBall.x = 400;
+        pongBall.y = 300;
+        pongBall.moveX = 0;
+        pongBall.moveY = 0;
+        $('#playerTwoHTMLscore').text(playerTwoScore);
+        setTimeout(moveStartDirection, 1000);
+    }
+    //RIGHT
+    else if (pongBall.x + pongBall.radius >= canvas.width) {
+        playerOneScore++;
+        pongBall.x = 400;
+        pongBall.y = 300;
+        pongBall.moveX = 0;
+        pongBall.moveY = 0;
+        $('#playerOneHTMLscore').text(playerOneScore);
+        setTimeout(moveStartDirection, 1000);
     }
 }
 
@@ -135,6 +171,17 @@ const playerKeyDownHandlers = (e) => {
     } else if (e.keyCode == 40) {
         playerTwoMoveDown = true;
     }
+
+    if (e.keyCode == 72) {
+        setTimeout(function() {
+            playerTwoReady = true;
+        }, 2000)
+    }
+    if (e.keyCode == 71) {
+        setTimeout(function() {
+            playerOneReady = true;
+        }, 2000)
+    }
 };
 
 const playerKeyUpHandlers = (e) => {
@@ -158,7 +205,7 @@ document.addEventListener("keyup", playerKeyUpHandlers, false);
 //Basic drawGame function and interval, set for change to integrate menus 
 const drawGame = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    pongBallTopBottomCollision();
+    pongBallBorderCollisions();
     pongBallPlayerOnePaddleCollision();
     pongBallPlayerTwoPaddleCollision();
     drawPlayerOnePaddle();
@@ -169,8 +216,8 @@ const drawGame = () => {
 
 //CALLING ACTIONS WHEN PAGE IS LOADED
 
-moveStartDirection()
-let game = setInterval(drawGame, 10)
+moveStartDirection();
+let game = setInterval(drawGame, 10);
 
 document.getElementById('pinkTheme').addEventListener('click', function () {
     $('.main').removeClass('activeTheme')
@@ -205,9 +252,8 @@ document.getElementById('kingTheme').addEventListener('click', function () {
         backgroundColor: '#ffb142'
     }, 2000)
     $('.title').animate({
-        color: 'black'
-    }, 2000)
-    $('.title').text('KING PONG')
+        opacity: '0'
+    }, 1000)
     $('.pongCanvas').animate({
         backgroundColor: '#2f3542',
         borderColor: '#ffeaa7'
@@ -215,6 +261,13 @@ document.getElementById('kingTheme').addEventListener('click', function () {
     $('.net').animate({
         borderLeftColor: 'white'
     }, 2000)
+    setTimeout(function() {
+        $('.title').text('KING PONG')
+        $('.title').css('color', 'black')
+        $('.title').animate({
+            opacity: '1'
+        }, 1000)
+    }, 1000)
 })
 
 
@@ -224,8 +277,17 @@ document.getElementById('pondTheme').addEventListener('click', function(){
     $('body').animate({
         backgroundColor: '#22a6b3'
     },2000)
-    $('.title').text ('POND PONG')
     $('.pongCanvas').animate({
         backgroundColor: '#78e08f'
-    })
+    }, 2000)
+    $('.title').animate({
+        opacity: '0'
+    }, 1000)
+    setTimeout(function() {
+        $('.title').text('POND PONG')
+        $('.title').css('color', 'black')
+        $('.title').animate({
+            opacity: '1'
+        }, 1000)
+    }, 1000)
 })

@@ -25,8 +25,10 @@ div{
     width: 0px;
     height:600px;
     left: 50%;
-    border-left: 2px dotted green;
-    transform: translateY(-50%)
+    
+    border-left: 1px dotted green;
+    transform: translate(-51%, -50%);
+    opacity: 0.2;
 }
 
 .title{
@@ -42,7 +44,9 @@ div{
     text-align: center;
     color: black;
     top: -117px;
-    left: 441px;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%)
 }
 
 
@@ -82,7 +86,79 @@ div{
 }
 .pondTheme:active{
     -webkit-transform:translate(0px, 5px);
-    background-color:#12CBC4;
+    background-color:#81f9f4;
+    box-shadow: 0px 1px 0px 0px;
+    transform: translateY(4px);
+    border-radius: 15px;
+}
+
+.bongTheme:hover{
+    box-shadow: 2px 5px 7px #007f00;
+    color: #007f00;
+}
+.bongTheme:active{
+    -webkit-transform: translate(0px, 5px);
+    background-color:#70ff70;
+    box-shadow: 0px 1px 0px 0px;
+    transform: translateY(4px);
+    border-radius: 15px;
+}
+
+.gongTheme:hover{
+    box-shadow: 2px 5px 7px #c50202;
+    color: #c50202;;
+}
+.gongTheme:active{
+    -webkit-transform: translate(0px, 5px);
+    background-color:#fcff40;
+    box-shadow: 0px 1px 0px 0px;
+    transform: translateY(4px);
+    border-radius: 15px;
+}
+
+.thongTheme:hover{
+    box-shadow: 2px 5px 7px #7702c5;
+    color: #7702c5;;
+}
+.thongTheme:active{
+    -webkit-transform: translate(0px, 5px);
+    background-color:#a55df8;
+    box-shadow: 0px 1px 0px 0px;
+    transform: translateY(4px);
+    border-radius: 15px;
+}
+
+.songTheme:hover{
+    box-shadow: 2px 5px 7px #c50274;
+    color: #c50274;;
+}
+.songTheme:active{
+    -webkit-transform: translate(0px, 5px);
+    background-color:#ff46b2;
+    box-shadow: 0px 1px 0px 0px;
+    transform: translateY(4px);
+    border-radius: 15px;
+}
+
+.sarongTheme:hover{
+    box-shadow: 2px 5px 7px #c56002;
+    color: #c56002;
+}
+.sarongTheme:active{
+    -webkit-transform: translate(0px, 5px);
+    background-color:#ffa24b;
+    box-shadow: 0px 1px 0px 0px;
+    transform: translateY(4px);
+    border-radius: 15px;
+}
+
+.wrongTheme:hover{
+    box-shadow: 2px 5px 7px #c50202;
+    color: #fffb00;
+}
+.wrongTheme:active{
+    -webkit-transform: translate(0px, 5px);
+    background-color:#2000d8;
     box-shadow: 0px 1px 0px 0px;
     transform: translateY(4px);
     border-radius: 15px;
@@ -90,4 +166,23 @@ div{
 
 .activeTheme{
 background-color: green;
+}
+
+.playerOneScore {
+    position: absolute;
+    top: 30%;
+    left: 7%;
+}
+
+.playerTwoScore {
+    position: absolute;
+    top: 30%;
+    left: 82%;
+
+}
+
+.score {
+    font-family: 'Bungee Inline', cursive;
+    font-size: 120px;
+
 }
