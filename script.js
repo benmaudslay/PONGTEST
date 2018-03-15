@@ -1,6 +1,8 @@
 let canvas = document.getElementById('pongCanvas')
 let ctx = canvas.getContext('2d')
 
+$('.flamingo').css('display', 'none')
+
 //Declare all golbal variables here
 let playerOneMoveUp = false;
 let playerOneMoveDown = false;
@@ -222,6 +224,7 @@ let game = setInterval(drawGame, 10);
 document.getElementById('pinkTheme').addEventListener('click', function () {
     $('.main').removeClass('activeTheme')
     $('#pinkTheme').addClass('activeTheme')
+    $('.flamingo').css('display', 'none')
     $('body').animate({
         backgroundColor: '#fd79a8'
     }, 2000)
@@ -235,19 +238,27 @@ document.getElementById('pinkTheme').addEventListener('click', function () {
     $('.net').animate({
         borderLeftColor: 'white'
     })
+    $('.score').animate({
+        color: '#fff'
+    }, 2000)
     setTimeout(function() {
         $('.title').text('PINK PONG')
-        $('.title').css('color', '#e84393')
+        $('.title').css('color', '#fff')
         $('.title').animate({
             opacity: '1'
         }, 1000)
+        $('.flamingo').css('display', 'block')
     }, 1000)
-
+    
+    $('.flamingo').animate({
+        opacity: '1'
+    }, 4000)
 })
 
 document.getElementById('kingTheme').addEventListener('click', function () {
     $('.main').removeClass('activeTheme')
     $('#kingTheme').addClass('activeTheme')
+    $('.flamingo').css('display', 'none')
     $('body').animate({
         backgroundColor: '#ffb142'
     }, 2000)
@@ -274,6 +285,7 @@ document.getElementById('kingTheme').addEventListener('click', function () {
 document.getElementById('pondTheme').addEventListener('click', function(){
     $('.main').removeClass('activeTheme')
     $('#pondTheme').addClass('activeTheme')
+    $('.flamingo').css('display', 'none')
     $('body').animate({
         backgroundColor: '#22a6b3'
     },2000)
