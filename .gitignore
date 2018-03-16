@@ -1,2 +1,63 @@
 README.md
-hi
+
+pinkTheme
+backgroundColor (body): #fd79a8
+pongCanvas: #f8a5c2
+border: #ffffff
+Net: #ffffff
+Title: #fff
+
+kingTheme
+backgroundColor (body): #ffb142
+pongCanvas: #2f3542
+Border: #ffeaa7
+Net: #ffffff
+Title: #000000
+
+pondTheme
+backgroundColor (body): #22a6b3
+pongCanvas: #78e08f
+Net: #ffffff
+Title: #000000
+
+bongTheme
+backgroundColor (body): #009432
+pongCanvas: #278e08f
+Border: #000000
+Net: #000000
+Title: #000000
+
+gongTheme
+backgroundColor: #b33939
+PongCanvas: #218c74
+Border: #ffffff
+Net: #ffffff
+Title: #ffb142
+
+thongTheme
+backgroundColor: #000000
+PongCanvas: #ff3838
+Border: #ff3838
+Net: #ff3838
+Title: #ff3838
+
+songTheme
+backgroundColor: #f7d794
+PongCanvas: #ffffff
+Border: #ff3838
+Net: #ff3838
+Title: #ff3838
+
+sarongTheme
+backgroundColor: #e58e26
+pongCanvas: #f6b93b
+Border: #ff3838
+Net: #ff3838
+Title: #fad390
+
+wrongTheme
+backgroundColor: #4b4b4b
+pongCanvas:#4bcffa
+Border: #000000
+Net: #ff3838
+Title: #7efff5

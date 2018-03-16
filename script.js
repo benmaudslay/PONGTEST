@@ -226,12 +226,12 @@ const playerKeyDownHandlers = (e) => {
     }
 
     if (e.keyCode == 72) {
-        setTimeout(function() {
+        setTimeout(function () {
             playerTwoReady = true;
         }, 2000)
     }
     if (e.keyCode == 71) {
-        setTimeout(function() {
+        setTimeout(function () {
             playerOneReady = true;
         }, 2000)
     }
@@ -272,44 +272,68 @@ const drawGame = () => {
 moveStartDirection();
 let game = setInterval(drawGame, 10);
 
+
+
+//NEW CLICK FUNCTIONS - DELCARE VARIABLES AND FUNCTIONS TO CALL ON CLICK ((PREDETERMINED))
+var pink = false;
+var king = false;
+var pond = false;
+var bong = false;
+var gong = false;
+var thong = false;
+var song = false;
+var sarong = false;
+var wrong = false;
+
+
+
+//OLD CLICK FUNCTIONS - CANT CHANGE BEWTEEN SMOOTHLY 
 document.getElementById('pinkTheme').addEventListener('click', function () {
-    $('.main').removeClass('activeTheme')
-    $('#pinkTheme').addClass('activeTheme')
-    $('.flamingo').css('display', 'none')
-    $('body').animate({
-        backgroundColor: '#fd79a8'
-    }, 2000)
-    $('.title').animate({
-        opacity: '0'
-    }, 1000)
-    $('.pongCanvas').animate({
-        backgroundColor: '#f8a5c2',
-        borderColor: 'white'
-    }, 2000)
-    $('.net').animate({
-        borderLeftColor: 'white'
-    })
-    $('.score').animate({
-        color: '#fff'
-    }, 2000)
-    setTimeout(function() {
-        $('.title').text('PINK PONG')
-        $('.title').css('color', '#fff')
-        $('.title').animate({
-            opacity: '1'
-        }, 1000)
-        $('.flamingo').css('display', 'block')
-    }, 1000)
-    
-    $('.flamingo').animate({
-        opacity: '1'
-    }, 4000)
+    pink = true;
+    themeBackground();
+    themeText();
+    // if (pink == true) {
+    //     $('.main').removeClass('activeTheme')
+    //     $('#pinkTheme').addClass('activeTheme')
+    //     $('.flamingo').css('display', 'none')
+    //     $('body').animate({
+    //         backgroundColor: '#fd79a8'
+    //     }, 2000)
+    //     $('.title').animate({
+    //         opacity: '0'
+    //     }, 1000)
+    //     $('.pongCanvas').animate({
+    //         backgroundColor: '#f8a5c2',
+    //         borderColor: 'white'
+    //     }, 2000)
+    //     $('.net').animate({
+    //         borderLeftColor: 'white'
+    //     })
+    //     $('.score').animate({
+    //         color: '#fff'
+    //     }, 2000)
+    //     setTimeout(function () {
+    //         $('.title').text('PINK PONG')
+    //         $('.title').css('color', '#fff')
+    //         $('.title').animate({
+    //             opacity: '1'
+    //         }, 1000)
+    //         $('.flamingo').css('display', 'block')
+    //     }, 1000)
+
+    //     $('.flamingo').animate({
+    //         opacity: '0.5'
+    //     }, 4000)
+
+    // }
 })
 
 document.getElementById('kingTheme').addEventListener('click', function () {
+    pink = false;
+    console.log(pink)
     $('.main').removeClass('activeTheme')
     $('#kingTheme').addClass('activeTheme')
-    $('.flamingo').css('display', 'none')
+    // $('.flamingo').css('display', 'none')
     $('body').animate({
         backgroundColor: '#ffb142'
     }, 2000)
@@ -323,7 +347,7 @@ document.getElementById('kingTheme').addEventListener('click', function () {
     $('.net').animate({
         borderLeftColor: 'white'
     }, 2000)
-    setTimeout(function() {
+    setTimeout(function () {
         $('.title').text('KING PONG')
         $('.title').css('color', 'black')
         $('.title').animate({
@@ -333,20 +357,20 @@ document.getElementById('kingTheme').addEventListener('click', function () {
 })
 
 
-document.getElementById('pondTheme').addEventListener('click', function(){
+document.getElementById('pondTheme').addEventListener('click', function () {
     $('.main').removeClass('activeTheme')
     $('#pondTheme').addClass('activeTheme')
     $('.flamingo').css('display', 'none')
     $('body').animate({
         backgroundColor: '#22a6b3'
-    },2000)
+    }, 2000)
     $('.pongCanvas').animate({
         backgroundColor: '#78e08f'
     }, 2000)
     $('.title').animate({
         opacity: '0'
     }, 1000)
-    setTimeout(function() {
+    setTimeout(function () {
         $('.title').text('POND PONG')
         $('.title').css('color', 'black')
         $('.title').animate({
@@ -354,6 +378,271 @@ document.getElementById('pondTheme').addEventListener('click', function(){
         }, 1000)
     }, 1000)
 })
+
+const themeBackground = () => {
+    if (pink == true) {
+        $('body').animate({
+            backgroundColor: '#fd79a8'
+        }, 2000)
+    } else if (king == true) {
+        $('body').animate({
+            backgroundColor: '#ffb142'
+        }, 2000)
+    } else if (pond == true) {
+        $('body').animate({
+            backgroundColor: '#22a6b3'
+        }, 2000)
+    } else if (bong == true) {
+        $('body').animate({
+            backgroundColor: '#009432'
+        }, 2000)
+    } else if (gong == true) {
+        $('body').animate({
+            backgroundColor: '#b33939'
+        }, 2000)
+    } else if (thong == true) {
+        $('body').animate({
+            backgroundColor: '#000000'
+        }, 2000)
+    } else if (song == true) {
+        $('body').animate({
+            backgroundColor: '#f7d794'
+        }, 2000)
+    } else if (sarong == true) {
+        $('body').animate({
+            backgroundColor: '#e58e26'
+        }, 2000)
+    } else if (wrong == true) {
+        $('body').animate({
+            backgroundColor: '#4b4b4b'
+        }, 2000)
+    }
+}
+
+const themeText = () => {
+    if (pink == true) {
+        //Fade out
+        $('.title').animate({
+            opacity: '0'
+        }, 1000)
+        //Fade in and replace
+        setTimeout(function () {
+            $('.title').text('PINK PONG')
+            $('.title').css('color', '#fff')
+            $('.title').animate({
+                opacity: '1'
+            }, 1000)
+        }, 1000)
+        $('.score').animate({
+            color: '#fff'
+        }, 2000)
+
+    } else if (king == true) {
+        //Fade out
+        $('.title').animate({
+            opacity: '0'
+        }, 1000)
+        //Fade in and replace
+        setTimeout(function () {
+            $('.title').text('KING PONG')
+            $('.title').css('color', 'black')
+            $('.title').animate({
+                opacity: '1'
+            }, 1000)
+        }, 1000)
+        $('.score').animate({
+            color: 'black'
+        }, 2000)
+
+    } else if (pond == true) {
+        //Fade out
+        $('.title').animate({
+            opacity: '0'
+        }, 1000)
+        //Fade in and replace
+        setTimeout(function () {
+            $('.title').text('POND PONG')
+            $('.title').css('color', 'black')
+            $('.title').animate({
+                opacity: '1'
+            }, 1000)
+        }, 1000)
+        $('.score').animate({
+            color: 'black'
+        }, 2000)
+
+    } else if (bong == true) {
+        //Fade out
+        $('.title').animate({
+            opacity: '0'
+        }, 1000)
+        //Fade in and replace
+        setTimeout(function () {
+            $('.title').text('BONG PONG')
+            $('.title').css('color', '#000000')
+            $('.title').animate({
+                opacity: '1'
+            }, 1000)
+        }, 1000)
+        $('.score').animate({
+            color: '#000000'
+        }, 2000)
+
+    } else if (gong == true) {
+        //Fade out
+        $('.title').animate({
+            opacity: '0'
+        }, 1000)
+        //Fade in and replace
+        setTimeout(function () {
+            $('.title').text('GONG PONG')
+            $('.title').css('color', '#ffb142')
+            $('.title').animate({
+                opacity: '1'
+            }, 1000)
+        }, 1000)
+        $('.score').animate({
+            color: '#ffb142'
+        }, 2000)
+
+    } else if (thong == true) {
+        //Fade out
+        $('.title').animate({
+            opacity: '0'
+        }, 1000)
+        //Fade in and replace
+        setTimeout(function () {
+            $('.title').text('THONG PONG')
+            $('.title').css('color', '#ff3838')
+            $('.title').animate({
+                opacity: '1'
+            }, 1000)
+        }, 1000)
+        $('.score').animate({
+            color: '#ff3838'
+        }, 2000)
+
+    } else if (song == true) {
+        //Fade out
+        $('.title').animate({
+            opacity: '0'
+        }, 1000)
+        //Fade in and replace
+        setTimeout(function () {
+            $('.title').text('SONG PONG')
+            $('.title').css('color', '#ff3838')
+            $('.title').animate({
+                opacity: '1'
+            }, 1000)
+        }, 1000)
+        $('.score').animate({
+            color: '#ff3838'
+        }, 2000)
+
+    } else if (sarong == true) {
+        //Fade out
+        $('.title').animate({
+            opacity: '0'
+        }, 1000)
+        //Fade in and replace
+        setTimeout(function () {
+            $('.title').text('SARONG PONG')
+            $('.title').css('color', '#fad390')
+            $('.title').animate({
+                opacity: '1'
+            }, 1000)
+        }, 1000)
+        $('.score').animate({
+            color: '#fad390'
+        }, 2000)
+
+    } else if (wrong == true) {
+        //Fade out
+        $('.title').animate({
+            opacity: '0'
+        }, 1000)
+        //Fade in and replace
+        setTimeout(function () {
+            $('.title').text('WRONG PONG')
+            $('.title').css('color', '#7efff5')
+            $('.title').animate({
+                opacity: '1'
+            }, 1000)
+        }, 1000)
+        $('.score').animate({
+            color: '#7efff5'
+        }, 2000)
+    }
+}
+
+const themePongCanvas = () => {
+    if (pink == true) {
+        $('.pongCanvas').animate({
+            backgroundColor: '#f8a5c2',
+            borderColor: '#ffffff'
+        }, 2000)
+    } else if (king == true) {
+        $('.pongCanvas').animate({
+            backgroundColor: '#2f3542',
+            borderColor: '#ffeaa7'
+        }, 2000)
+    } else if (pond == true) {
+        $('.pongCanvas').animate({
+            backgroundColor: '#78e08f',
+            borderColor: '#ffffff'
+        }, 2000)
+    } else if (bong == true) {
+        $('.pongCanvas').animate({
+            backgroundColor: '#278e08f',
+            borderColor: '#000000'
+        }, 2000)
+    } else if (gong == true) {
+        $('.pongCanvas').animate({
+            backgroundColor: '#218c74',
+            borderColor: '#ffffff'
+        }, 2000)
+    } else if (thong == true) {
+        $('.pongCanvas').animate({
+            backgroundColor: '#ff3838',
+            borderColor: '#ff3838'
+        }, 2000)
+    } else if (song == true) {
+        $('.pongCanvas').animate({
+            backgroundColor: '#ffffff',
+            borderColor: '#ff3838'
+        }, 2000)
+    } else if (sarong == true) {
+        $('.pongCanvas').animate({
+            backgroundColor: '#f6b93b',
+            borderColor: '#ff3838'
+        }, 2000)
+    } else if (wrong == true) {
+        $('.pongCanvas').animate({
+            backgroundColor: '#4bcffa',
+            borderColor: '#ff3838'
+        }, 2000)
+    }
+}
+
+
+
+$('.net').animate({
+    borderLeftColor: 'white'
+}, 2000)
+
+//FUNCTION TEMPLATE
+/*
+if (pink == true) {
+} else if (king == true) {
+} else if (pond == true) {
+} else if (bong == true) {
+} else if (gong == true) {
+} else if (thong == true) {
+} else if (song == true) {
+} else if (sarong == true) {
+} else if (wrong == true) {
+}
+*/
 
 document.getElementById('bongTheme').addEventListener('click', function(){
     $('.main').removeClass('activeTheme')
@@ -501,3 +790,4 @@ document.getElementById('wrongTheme').addEventListener('click', function () {
         }, 1000)
     }, 1000)
 })
+
