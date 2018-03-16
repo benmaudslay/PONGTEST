@@ -154,63 +154,63 @@ const pongBallBorderCollisions = () => {
 
 const pongBallPlayerOnePaddleCollision = () => {
     if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.125)) {
-        pongBall.moveY = (2 - Math.round(Math.random()*0.4, -2)) * Math.sign(pongBall.moveY)
+        pongBall.moveY = (2 - Math.round(Math.random() * 0.4, -2)) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
     } else if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y + (playerOnePaddle.height * 0.125) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.25)) {
-        pongBall.moveY = (2 - Math.round((Math.random()*0.4)+0.4, -2)) * Math.sign(pongBall.moveY)
+        pongBall.moveY = (2 - Math.round((Math.random() * 0.4) + 0.4, -2)) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
     } else if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y + (playerOnePaddle.height * 0.25) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.375)) {
-        pongBall.moveY = (2 - Math.round((Math.random()*0.4)+0.8, -2)+0.8) * Math.sign(pongBall.moveY)
+        pongBall.moveY = (2 - Math.round((Math.random() * 0.4) + 0.8, -2) + 0.8) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
     } else if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y + (playerOnePaddle.height * 0.375) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.5)) {
-        pongBall.moveY = (2 - Math.round((Math.random()*0.4)+1.2, -2)+1.2) * Math.sign(pongBall.moveY)
+        pongBall.moveY = (2 - Math.round((Math.random() * 0.4) + 1.2, -2) + 1.2) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
-    } else if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y  + (playerOnePaddle.height * 0.5) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.625)) {
-        pongBall.moveY = (2 - Math.round((Math.random()*0.4)+1.2, -2)+1.2) * Math.sign(pongBall.moveY)
+    } else if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y + (playerOnePaddle.height * 0.5) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.625)) {
+        pongBall.moveY = (2 - Math.round((Math.random() * 0.4) + 1.2, -2) + 1.2) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
-    } else if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y  + (playerOnePaddle.height * 0.625) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.75)) {
-        pongBall.moveY = (2 - Math.round((Math.random()*0.4)+0.8, -2)+0.8) * Math.sign(pongBall.moveY)
+    } else if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y + (playerOnePaddle.height * 0.625) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.75)) {
+        pongBall.moveY = (2 - Math.round((Math.random() * 0.4) + 0.8, -2) + 0.8) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
     } else if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y + (playerOnePaddle.height * 0.75) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.875)) {
-        pongBall.moveY = (2 - Math.round((Math.random()*0.4)+0.4, -2)+0.4) * Math.sign(pongBall.moveY)
+        pongBall.moveY = (2 - Math.round((Math.random() * 0.4) + 0.4, -2) + 0.4) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
     } else if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y + (playerOnePaddle.height * 0.875) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height)) {
-        pongBall.moveY = (2 - Math.round(Math.random()*0.4, -2)) * Math.sign(pongBall.moveY)
+        pongBall.moveY = (2 - Math.round(Math.random() * 0.4, -2)) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
     }
 }
 
 const pongBallPlayerTwoPaddleCollision = () => {
     if (pongBall.x + pongBall.radius <= playerTwoPaddle.x + playerTwoPaddle.width && pongBall.x + pongBall.radius >= playerTwoPaddle.x && pongBall.y >= playerTwoPaddle.y && pongBall.y < playerTwoPaddle.y + (playerTwoPaddle.height * 0.125)) {
-        pongBall.moveY = (2 - Math.round(Math.random()*0.4, -2)) * Math.sign(pongBall.moveY)
+        pongBall.moveY = (2 - Math.round(Math.random() * 0.4, -2)) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
         pongBall.moveX = -pongBall.moveX
     } else if (pongBall.x + pongBall.radius <= playerTwoPaddle.x + playerTwoPaddle.width && pongBall.x + pongBall.radius >= playerTwoPaddle.x && pongBall.y >= playerTwoPaddle.y + (playerTwoPaddle.height * 0.125) && pongBall.y < playerTwoPaddle.y + (playerTwoPaddle.height * 0.25)) {
-        pongBall.moveY = (2 - Math.round((Math.random()*0.4)+0.4, -2)) * Math.sign(pongBall.moveY)
+        pongBall.moveY = (2 - Math.round((Math.random() * 0.4) + 0.4, -2)) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
         pongBall.moveX = -pongBall.moveX
     } else if (pongBall.x + pongBall.radius <= playerTwoPaddle.x + playerTwoPaddle.width && pongBall.x + pongBall.radius >= playerTwoPaddle.x && pongBall.y >= playerTwoPaddle.y + (playerTwoPaddle.height * 0.25) && pongBall.y < playerTwoPaddle.y + (playerTwoPaddle.height * 0.375)) {
-        pongBall.moveY = (2 - Math.round((Math.random()*0.4)+0.8, -2)+0.8) * Math.sign(pongBall.moveY)
+        pongBall.moveY = (2 - Math.round((Math.random() * 0.4) + 0.8, -2) + 0.8) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
         pongBall.moveX = -pongBall.moveX
     } else if (pongBall.x + pongBall.radius <= playerTwoPaddle.x + playerTwoPaddle.width && pongBall.x + pongBall.radius >= playerTwoPaddle.x && pongBall.y >= playerTwoPaddle.y + (playerTwoPaddle.height * 0.375) && pongBall.y < playerTwoPaddle.y + (playerTwoPaddle.height * 0.5)) {
-        pongBall.moveY = (2 - Math.round((Math.random()*0.4)+1.2, -2)+1.2) * Math.sign(pongBall.moveY)
+        pongBall.moveY = (2 - Math.round((Math.random() * 0.4) + 1.2, -2) + 1.2) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
         pongBall.moveX = -pongBall.moveX
-    } else if (pongBall.x + pongBall.radius <= playerTwoPaddle.x + playerTwoPaddle.width && pongBall.x + pongBall.radius >= playerTwoPaddle.x && pongBall.y >= playerTwoPaddle.y  + (playerTwoPaddle.height * 0.5) && pongBall.y < playerTwoPaddle.y + (playerTwoPaddle.height * 0.625)) {
-        pongBall.moveY = (2 - Math.round((Math.random()*0.4)+1.2, -2)+1.2) * Math.sign(pongBall.moveY)
+    } else if (pongBall.x + pongBall.radius <= playerTwoPaddle.x + playerTwoPaddle.width && pongBall.x + pongBall.radius >= playerTwoPaddle.x && pongBall.y >= playerTwoPaddle.y + (playerTwoPaddle.height * 0.5) && pongBall.y < playerTwoPaddle.y + (playerTwoPaddle.height * 0.625)) {
+        pongBall.moveY = (2 - Math.round((Math.random() * 0.4) + 1.2, -2) + 1.2) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
         pongBall.moveX = -pongBall.moveX
-    } else if (pongBall.x + pongBall.radius <= playerTwoPaddle.x + playerTwoPaddle.width && pongBall.x + pongBall.radius >= playerTwoPaddle.x && pongBall.y >= playerTwoPaddle.y  + (playerTwoPaddle.height * 0.625) && pongBall.y < playerTwoPaddle.y + (playerTwoPaddle.height * 0.75)) {
-        pongBall.moveY = (2 - Math.round((Math.random()*0.4)+0.8, -2)+0.8) * Math.sign(pongBall.moveY)
+    } else if (pongBall.x + pongBall.radius <= playerTwoPaddle.x + playerTwoPaddle.width && pongBall.x + pongBall.radius >= playerTwoPaddle.x && pongBall.y >= playerTwoPaddle.y + (playerTwoPaddle.height * 0.625) && pongBall.y < playerTwoPaddle.y + (playerTwoPaddle.height * 0.75)) {
+        pongBall.moveY = (2 - Math.round((Math.random() * 0.4) + 0.8, -2) + 0.8) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
         pongBall.moveX = -pongBall.moveX
     } else if (pongBall.x + pongBall.radius <= playerTwoPaddle.x + playerTwoPaddle.width && pongBall.x + pongBall.radius >= playerTwoPaddle.x && pongBall.y >= playerTwoPaddle.y + (playerTwoPaddle.height * 0.75) && pongBall.y < playerTwoPaddle.y + (playerTwoPaddle.height * 0.875)) {
-        pongBall.moveY = (2 - Math.round((Math.random()*0.4)+0.4, -2)+0.4) * Math.sign(pongBall.moveY)
+        pongBall.moveY = (2 - Math.round((Math.random() * 0.4) + 0.4, -2) + 0.4) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
         pongBall.moveX = -pongBall.moveX
     } else if (pongBall.x + pongBall.radius <= playerTwoPaddle.x + playerTwoPaddle.width && pongBall.x + pongBall.radius >= playerTwoPaddle.x && pongBall.y >= playerTwoPaddle.y + (playerTwoPaddle.height * 0.875) && pongBall.y < playerTwoPaddle.y + (playerTwoPaddle.height)) {
-        pongBall.moveY = (2 - Math.round(Math.random()*0.4, -2)) * Math.sign(pongBall.moveY)
+        pongBall.moveY = (2 - Math.round(Math.random() * 0.4, -2)) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
         pongBall.moveX = -pongBall.moveX
     }
@@ -289,75 +289,75 @@ var song = false;
 var sarong = false;
 var wrong = false;
 
-
-
-//OLD CLICK FUNCTIONS - CANT CHANGE BEWTEEN SMOOTHLY 
+//CLICK FUNCTIONS - CANT CHANGE BEWTEEN SMOOTHLY 
 document.getElementById('pinkTheme').addEventListener('click', function () {
-    pink = true;
+    var pink = true;
+    var king = false;
+    var pond = false;
+    var bong = false;
+    var gong = false;
+    var thong = false;
+    var song = false;
+    var sarong = false;
+    var wrong = false;
     themeBackground();
     themeText();
-    // if (pink == true) {
-    //     $('.main').removeClass('activeTheme')
-    //     $('#pinkTheme').addClass('activeTheme')
-    //     $('.flamingo').css('display', 'none')
-    //     $('body').animate({
-    //         backgroundColor: '#fd79a8'
-    //     }, 2000)
-    //     $('.title').animate({
-    //         opacity: '0'
-    //     }, 1000)
-    //     $('.pongCanvas').animate({
-    //         backgroundColor: '#f8a5c2',
-    //         borderColor: 'white'
-    //     }, 2000)
-    //     $('.net').animate({
-    //         borderLeftColor: 'white'
-    //     })
-    //     $('.score').animate({
-    //         color: '#fff'
-    //     }, 2000)
-    //     setTimeout(function () {
-    //         $('.title').text('PINK PONG')
-    //         $('.title').css('color', '#fff')
-    //         $('.title').animate({
-    //             opacity: '1'
-    //         }, 1000)
-    //         $('.flamingo').css('display', 'block')
-    //     }, 1000)
-
-    //     $('.flamingo').animate({
-    //         opacity: '0.5'
-    //     }, 4000)
-
-    // }
+    themeNet();
+    themePongCanvas();
 })
 
+// if (pink == true) {
+//     $('.main').removeClass('activeTheme')
+//     $('#pinkTheme').addClass('activeTheme')
+//     $('.flamingo').css('display', 'none')
+//     $('body').animate({
+//         backgroundColor: '#fd79a8'
+//     }, 2000)
+//     $('.title').animate({
+//         opacity: '0'
+//     }, 1000)
+//     $('.pongCanvas').animate({
+//         backgroundColor: '#f8a5c2',
+//         borderColor: 'white'
+//     }, 2000)
+//     $('.net').animate({
+//         borderLeftColor: 'white'
+//     })
+//     $('.score').animate({
+//         color: '#fff'
+//     }, 2000)
+//     setTimeout(function () {
+//         $('.title').text('PINK PONG')
+//         $('.title').css('color', '#fff')
+//         $('.title').animate({
+//             opacity: '1'
+//         }, 1000)
+//         $('.flamingo').css('display', 'block')
+//     }, 1000)
+
+//     $('.flamingo').animate({
+//         opacity: '0.5'
+//     }, 4000)
+
+// }
+
+
 document.getElementById('kingTheme').addEventListener('click', function () {
-    pink = false;
+    var pink = false;
+    var king = true;
+    var pond = false;
+    var bong = false;
+    var gong = false;
+    var thong = false;
+    var song = false;
+    var sarong = false;
+    var wrong = false;
+    themeBackground();
+    themeText();
+    themeNet();
+    themePongCanvas();
     console.log(pink)
-    $('.main').removeClass('activeTheme')
-    $('#kingTheme').addClass('activeTheme')
-    // $('.flamingo').css('display', 'none')
-    $('body').animate({
-        backgroundColor: '#ffb142'
-    }, 2000)
-    $('.title').animate({
-        opacity: '0'
-    }, 1000)
-    $('.pongCanvas').animate({
-        backgroundColor: '#2f3542',
-        borderColor: '#ffeaa7'
-    }, 2000)
-    $('.net').animate({
-        borderLeftColor: 'white'
-    }, 2000)
-    setTimeout(function () {
-        $('.title').text('KING PONG')
-        $('.title').css('color', 'black')
-        $('.title').animate({
-            opacity: '1'
-        }, 1000)
-    }, 1000)
+
 })
 
 
@@ -628,11 +628,47 @@ const themePongCanvas = () => {
     }
 }
 
+const themeNet = () => {
+    if (pink == true) {
+        $('.net').animate({
+            borderLeftColor: '#ffffff'
+        }, 2000)
+    } else if (king == true) {
+        $('.net').animate({
+            borderLeftColor: '#ffffff'
+        }, 2000)
+    } else if (pond == true) {
+        $('.net').animate({
+            borderLeftColor: '#ffffff'
+        }, 2000)
+    } else if (bong == true) {
+        $('.net').animate({
+            borderLeftColor: '#000000'
+        }, 2000)
+    } else if (gong == true) {
+        $('.net').animate({
+            borderLeftColor: '#ffffff'
+        }, 2000)
+    } else if (thong == true) {
+        $('.net').animate({
+            borderLeftColor: '#ff3838'
+        }, 2000)
+    } else if (song == true) {
+        $('.net').animate({
+            borderLeftColor: '#ff3838'
+        }, 2000)
+    } else if (sarong == true) {
+        $('.net').animate({
+            borderLeftColor: '#ff3838'
+        }, 2000)
+    } else if (wrong == true) {
+        $('.net').animate({
+            borderLeftColor: '#ff3838'
+        }, 2000)
+    }
+}
 
 
-$('.net').animate({
-    borderLeftColor: 'white'
-}, 2000)
 
 //FUNCTION TEMPLATE
 /*
@@ -648,27 +684,27 @@ if (pink == true) {
 }
 */
 
-document.getElementById('bongTheme').addEventListener('click', function(){
+document.getElementById('bongTheme').addEventListener('click', function () {
     $('.main').removeClass('activeTheme')
     $('#bongTheme').addClass('activeTheme')
     $('body').animate({
         backgroundColor: '#009432'
-    },2000)
+    }, 2000)
     $('.pongCanvas').animate({
         backgroundColor: '#78e08f',
         borderColor: 'black'
 
-    },2000)
+    }, 2000)
     $('.title').animate({
         opacity: '0'
-    },1000)
-    setTimeout(function(){
+    }, 1000)
+    setTimeout(function () {
         $('.title').text('BONG PONG')
-        $('.title').css('color','black')
+        $('.title').css('color', 'black')
         $('.title').animate({
             opacity: '1'
-        },1000)
-    },1000)
+        }, 1000)
+    }, 1000)
 })
 
 document.getElementById('gongTheme').addEventListener('click', function () {
@@ -686,7 +722,7 @@ document.getElementById('gongTheme').addEventListener('click', function () {
     $('.net').animate({
         borderLeftColor: 'white'
     })
-    setTimeout(function() {
+    setTimeout(function () {
         $('.title').text('GONG PONG')
         $('.title').css('color', '#ffb142')
         $('.title').animate({
@@ -711,7 +747,7 @@ document.getElementById('thongTheme').addEventListener('click', function () {
     $('.net').animate({
         borderLeftColor: '#ff3838'
     })
-    setTimeout(function() {
+    setTimeout(function () {
         $('.title').text('THONG PONG')
         $('.title').css('color', '#ff3838')
         $('.title').animate({
@@ -736,7 +772,7 @@ document.getElementById('songTheme').addEventListener('click', function () {
     $('.net').animate({
         borderLeftColor: '#ff3838'
     })
-    setTimeout(function() {
+    setTimeout(function () {
         $('.title').text('SONG PONG')
         $('.title').css('color', '#ff3838')
         $('.title').animate({
@@ -761,7 +797,7 @@ document.getElementById('sarongTheme').addEventListener('click', function () {
     $('.net').animate({
         borderLeftColor: '#ff3838'
     })
-    setTimeout(function() {
+    setTimeout(function () {
         $('.title').text('SARONG PONG')
         $('.title').css('color', '#fad390')
         $('.title').animate({
@@ -786,7 +822,7 @@ document.getElementById('wrongTheme').addEventListener('click', function () {
     $('.net').animate({
         borderLeftColor: '#ff3838'
     })
-    setTimeout(function() {
+    setTimeout(function () {
         $('.title').text('WRONG PONG')
         $('.title').css('color', '#7efff5')
         $('.title').animate({
@@ -794,4 +830,3 @@ document.getElementById('wrongTheme').addEventListener('click', function () {
         }, 1000)
     }, 1000)
 })
-
