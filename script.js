@@ -16,14 +16,14 @@ let playerTwoReady = false;
 //Player paddle objects
 let playerOnePaddle = {
     x: 10,
-    y: 300,
+    y: 265,
     height: 70,
     width: 10
 };
 
 let playerTwoPaddle = {
     x: canvas.width - 20,
-    y: 300,
+    y: 265,
     height: 70,
     width: 10
 };
@@ -123,16 +123,18 @@ const movePongBall = () => {
 }
 
 const pongBallBorderCollisions = () => {
-    if (pongBall.y + pongBall.radius <= 0 || pongBall.y + pongBall.radius >= canvas.height) {
+    if (pongBall.y - pongBall.radius <= 0 || pongBall.y + pongBall.radius >= canvas.height) {
         pongBall.moveY = -pongBall.moveY
     }
     //LEFT
-    if (pongBall.x + pongBall.radius <= 0) {
+    if (pongBall.x - pongBall.radius <= 0) {
         playerTwoScore++;
         pongBall.x = 400;
         pongBall.y = 300;
         pongBall.moveX = 0;
         pongBall.moveY = 0;
+        playerOnePaddle.y = 265;
+        playerTwoPaddle.y = 265;
         $('#playerTwoHTMLscore').text(playerTwoScore);
         setTimeout(moveStartDirection, 1000);
     }
@@ -143,6 +145,8 @@ const pongBallBorderCollisions = () => {
         pongBall.y = 300;
         pongBall.moveX = 0;
         pongBall.moveY = 0;
+        playerOnePaddle.y = 265;
+        playerTwoPaddle.y = 265;
         $('#playerOneHTMLscore').text(playerOneScore);
         setTimeout(moveStartDirection, 1000);
     }
@@ -152,25 +156,25 @@ const pongBallPlayerOnePaddleCollision = () => {
     if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.125)) {
         pongBall.moveY = (2 - Math.round(Math.random()*0.4, -2)) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
-    } else if (pongBall.x + pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x + pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y + (playerOnePaddle.height * 0.125) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.25)) {
+    } else if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y + (playerOnePaddle.height * 0.125) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.25)) {
         pongBall.moveY = (2 - Math.round((Math.random()*0.4)+0.4, -2)) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
-    } else if (pongBall.x + pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x + pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y + (playerOnePaddle.height * 0.25) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.375)) {
+    } else if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y + (playerOnePaddle.height * 0.25) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.375)) {
         pongBall.moveY = (2 - Math.round((Math.random()*0.4)+0.8, -2)+0.8) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
-    } else if (pongBall.x + pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x + pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y + (playerOnePaddle.height * 0.375) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.5)) {
+    } else if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y + (playerOnePaddle.height * 0.375) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.5)) {
         pongBall.moveY = (2 - Math.round((Math.random()*0.4)+1.2, -2)+1.2) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
-    } else if (pongBall.x + pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x + pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y  + (playerOnePaddle.height * 0.5) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.625)) {
+    } else if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y  + (playerOnePaddle.height * 0.5) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.625)) {
         pongBall.moveY = (2 - Math.round((Math.random()*0.4)+1.2, -2)+1.2) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
-    } else if (pongBall.x + pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x + pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y  + (playerOnePaddle.height * 0.625) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.75)) {
+    } else if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y  + (playerOnePaddle.height * 0.625) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.75)) {
         pongBall.moveY = (2 - Math.round((Math.random()*0.4)+0.8, -2)+0.8) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
-    } else if (pongBall.x + pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x + pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y + (playerOnePaddle.height * 0.75) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.875)) {
+    } else if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y + (playerOnePaddle.height * 0.75) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.875)) {
         pongBall.moveY = (2 - Math.round((Math.random()*0.4)+0.4, -2)+0.4) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
-    } else if (pongBall.x + pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x + pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y + (playerOnePaddle.height * 0.875) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height)) {
+    } else if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y + (playerOnePaddle.height * 0.875) && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height)) {
         pongBall.moveY = (2 - Math.round(Math.random()*0.4, -2)) * Math.sign(pongBall.moveY)
         calculateSpeed(pongBall.moveY)
     }
