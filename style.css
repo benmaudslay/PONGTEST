@@ -1,8 +1,8 @@
-body{
+body {
     background-color: white;
 }
 
-div{
+div {
     font-family: 'Bungee Inline', cursive;
     font-size: 150px;
     color: black;
@@ -17,28 +17,27 @@ div{
     transform: translate(-50%, -50%);
 }
 
-.net{
-    content:"";
+.net {
+    content: "";
     position: absolute;
     z-index: 0;
     top: 60%;
     width: 0px;
-    height:600px;
+    height: 600px;
     left: 50%;
-    
     border-left: 1px dotted green;
     transform: translate(-51%, -50%);
     opacity: 0.2;
 }
 
-.title{
+.title {
     margin-top: 22px;
     font-family: 'Bungee Inline', cursive;
     font-size: 150px;
     text-align: center;
-} 
+}
 
-.themeButton{
+.themeButton {
     position: absolute;
     padding: 10px 25px;
     text-align: center;
@@ -49,123 +48,135 @@ div{
     transform: translateX(-50%)
 }
 
-
-.themeButton > .main {
+.themeButton>.main {
     padding: 5px;
     border: none;
     border-radius: 10px;
     font-family: 'Bungee Inline', cursive;
 }
 
-.pinkTheme:hover{
+.pinkTheme:hover {
     box-shadow: 2px 5px 7px #ff6b81;
     color: #ff6b81;
 }
-.pinkTheme:active{
+
+.pinkTheme:active {
     -webkit-transform: translate(0px, 5px);
-    background-color:pink;
+    background-color: pink;
     box-shadow: 0px 1px 0px 0px;
     transform: translateY(4px);
     border-radius: 15px;
 }
 
-.kingTheme:hover{
+.kingTheme:hover {
     box-shadow: 2px 5px 7px #F79F1F;
     color: #F79F1F;
 }
-.kingTheme:active{
+
+.kingTheme:active {
     -webkit-transform: translate(0px, 5px);
     background-color: #FFC312;
     box-shadow: 0px 1px 0px 0px;
     transform: translateY(4px);
     border-radius: 15px;
 }
-.pondTheme:hover{
+
+.pondTheme:hover {
     box-shadow: 2px 5px 7px #12CBC4;
-    color:#12CBC4;
+    color: #12CBC4;
 }
-.pondTheme:active{
-    -webkit-transform:translate(0px, 5px);
-    background-color:#81f9f4;
+
+.pondTheme:active {
+    -webkit-transform: translate(0px, 5px);
+    background-color: #81f9f4;
     box-shadow: 0px 1px 0px 0px;
     transform: translateY(4px);
     border-radius: 15px;
 }
 
-.bongTheme:hover{
+.bongTheme:hover {
     box-shadow: 2px 5px 7px #007f00;
     color: #007f00;
 }
-.bongTheme:active{
+
+.bongTheme:active {
     -webkit-transform: translate(0px, 5px);
-    background-color:#70ff70;
+    background-color: #70ff70;
     box-shadow: 0px 1px 0px 0px;
     transform: translateY(4px);
     border-radius: 15px;
 }
 
-.gongTheme:hover{
+.gongTheme:hover {
     box-shadow: 2px 5px 7px #c50202;
-    color: #c50202;;
+    color: #c50202;
+    ;
 }
-.gongTheme:active{
+
+.gongTheme:active {
     -webkit-transform: translate(0px, 5px);
-    background-color:#fcff40;
+    background-color: #fcff40;
     box-shadow: 0px 1px 0px 0px;
     transform: translateY(4px);
     border-radius: 15px;
 }
 
-.thongTheme:hover{
+.thongTheme:hover {
     box-shadow: 2px 5px 7px #7702c5;
-    color: #7702c5;;
+    color: #7702c5;
+    ;
 }
-.thongTheme:active{
+
+.thongTheme:active {
     -webkit-transform: translate(0px, 5px);
-    background-color:#a55df8;
+    background-color: #a55df8;
     box-shadow: 0px 1px 0px 0px;
     transform: translateY(4px);
     border-radius: 15px;
 }
 
-.songTheme:hover{
+.songTheme:hover {
     box-shadow: 2px 5px 7px #c50274;
-    color: #c50274;;
+    color: #c50274;
+    ;
 }
-.songTheme:active{
+
+.songTheme:active {
     -webkit-transform: translate(0px, 5px);
-    background-color:#ff46b2;
+    background-color: #ff46b2;
     box-shadow: 0px 1px 0px 0px;
     transform: translateY(4px);
     border-radius: 15px;
 }
 
-.sarongTheme:hover{
+.sarongTheme:hover {
     box-shadow: 2px 5px 7px #c56002;
     color: #c56002;
 }
-.sarongTheme:active{
+
+.sarongTheme:active {
     -webkit-transform: translate(0px, 5px);
-    background-color:#ffa24b;
+    background-color: #ffa24b;
     box-shadow: 0px 1px 0px 0px;
     transform: translateY(4px);
     border-radius: 15px;
 }
 
-.wrongTheme:hover{
+.wrongTheme:hover {
     box-shadow: 2px 5px 7px #c50202;
     color: #fffb00;
 }
-.wrongTheme:active{
+
+.wrongTheme:active {
     -webkit-transform: translate(0px, 5px);
-    background-color:#2000d8;
+    background-color: #2000d8;
     box-shadow: 0px 1px 0px 0px;
     transform: translateY(4px);
     border-radius: 15px;
 }
 
-.activeTheme{
-background-color: green;
+.activeTheme {
+    background-color: green;
 }
 
 .playerOneScore {
@@ -178,21 +189,18 @@ background-color: green;
     position: absolute;
     top: 30%;
     left: 82%;
-
 }
 
 .score {
     font-family: 'Bungee Inline', cursive;
     font-size: 120px;
-
 }
-
-
 
 .flamingo {
     position: absolute;
     opacity: 0;
 }
+
 .flamingoContainer {
     height: 100%;
     width: 800px;
@@ -202,4 +210,3 @@ background-color: green;
     top: 0%;
     z-index: -1;
 }
-
