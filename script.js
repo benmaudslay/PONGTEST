@@ -1,6 +1,9 @@
 let canvas = document.getElementById('pongCanvas')
 let ctx = canvas.getContext('2d')
 
+$('#playerOneHTMLscore').css('opacity', '0');
+$('#playerTwoHTMLscore').css('opacity', '0');
+
 //Declare all golbal variables here
 let playerOneMoveUp = false;
 let playerOneMoveDown = false;
@@ -114,10 +117,17 @@ const drawPongBall = () => {
 
 const movePongBall = () => {
     if (playerOneReady && playerTwoReady) {
-        pongBall.x += pongBall.moveX;
-        pongBall.y += pongBall.moveY;
+        $('#playerOneHTMLscore').animate({
+            opacity: '0.4'
+        }, 1000)
+        $('#playerTwoHTMLscore').animate({
+            opacity: '0.4'
+        }, 1000)
+        setTimeout(function () {
+            pongBall.x += pongBall.moveX;
+            pongBall.y += pongBall.moveY;
+        }, 2000)
     }
-
 }
 
 const pongBallBorderCollisions = () => {
@@ -126,7 +136,9 @@ const pongBallBorderCollisions = () => {
     }
     //LEFT
     if (pongBall.x - pongBall.radius <= 0) {
-        playerTwoScore++;
+        if (playerTwoScore < 9) {
+            playerTwoScore++;
+        }
         pongBall.x = 400;
         pongBall.y = 300;
         pongBall.moveX = 0;
@@ -138,7 +150,9 @@ const pongBallBorderCollisions = () => {
     }
     //RIGHT
     else if (pongBall.x + pongBall.radius >= canvas.width) {
-        playerOneScore++;
+        if (playerOneScore < 9) {
+            playerOneScore++;
+        }
         pongBall.x = 400;
         pongBall.y = 300;
         pongBall.moveX = 0;
@@ -149,7 +163,6 @@ const pongBallBorderCollisions = () => {
         setTimeout(moveStartDirection, 1000);
     }
 }
-
 const pongBallPlayerOnePaddleCollision = () => {
     if (pongBall.x - pongBall.radius <= playerOnePaddle.x + playerOnePaddle.width && pongBall.x - pongBall.radius >= playerOnePaddle.x && pongBall.y >= playerOnePaddle.y && pongBall.y < playerOnePaddle.y + (playerOnePaddle.height * 0.125)) {
         pongBall.moveY = (2 - Math.round(Math.random() * 0.4, -2)) * Math.sign(pongBall.moveY)
@@ -230,12 +243,12 @@ const playerKeyDownHandlers = (e) => {
     if (e.keyCode == 72) {
         setTimeout(function () {
             playerTwoReady = true;
-        }, 2000)
+        }, 1000)
     }
     if (e.keyCode == 71) {
         setTimeout(function () {
             playerOneReady = true;
-        }, 2000)
+        }, 1000)
     }
 };
 
@@ -326,7 +339,6 @@ document.getElementById('kingTheme').addEventListener('click', function () {
     sarong = false;
     wrong = false;
     stopAnimationChanges();
-
     themeBackground();
     themeText();
     themeNet();
@@ -748,24 +760,51 @@ const themePongCanvas = () => {
 
 const themeImages = () => {
     if (pink == true) {
-            $('.flamingo').css('display', 'block')
+        $('.flamingo').css('display', 'block')
+        $('.flamingo').animate({
+            opacity: '0.00000001'
+        }, 1000, 'linear', function () {
             $('.flamingo').animate({
-                opacity: '0.00000001'
-            }, 1000, 'linear', function() {
-                $('.flamingo').animate({
-                    opacity: '0.5'
-                }, 1000)
-            })
+                opacity: '0.5'
+            }, 1000)
+        })
     } else if (pink == false) {
         $('.flamingo').animate({
             opacity: '0'
-        }, 1000, function() {
+        }, 1000, function () {
             $('.flamingo').css('display', 'none')
         })
-    } else if (king == true) {
-
+    }
+    if (king == true) {
+        $('.kongContainer').css('display', 'block')
+        $('.kongContainer').animate({
+            opacity: '0.00000001'
+        }, 1000, 'linear', function () {
+            $('.kongContainer').animate({
+                opacity: '1'
+            }, 1000)
+        })
+    } else if (king == false) {
+        $('.kongContainer').animate({
+            opacity: '0'
+        }, 1000, function () {
+            $('.kongContainer').css('display', 'none')
+        })
     } else if (pond == true) {
-
+        $('.frog').css('display', 'block')
+        $('.frog').animate({
+            opacity: '0.00000001'
+        }, 1000, 'linear', function () {
+            $('.frog').animate({
+                opacity: '1'
+            }, 1000)
+        })
+    } else if (king == false) {
+        $('.frog').animate({
+            opacity: '0'
+        }, 1000, function () {
+            $('.frog').css('display', 'none')
+        })
     } else if (bong == true) {
 
     } else if (gong == true) {
